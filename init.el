@@ -53,7 +53,7 @@
 ;    "keys"
 ;    "erc-conf"
 ;    "gnus-conf"
-;    "misc"
+    "misc"
 ;    "org-conf"
     "perl"
     )
