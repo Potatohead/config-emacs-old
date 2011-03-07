@@ -55,7 +55,7 @@
 ;    "gnus-conf"
 ;    "misc"
 ;    "org-conf"
-;    "perl"
+    "perl"
     )
   "list of modules to load on startup.")
 
