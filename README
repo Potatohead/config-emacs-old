@@ -1,0 +1,15 @@
+CMCKAY emacs config
+
+So I don't know how to use emacs, and by default its so far behind my vim setup
+that its simply unusable. After some (alot) of searching I found a pretty good
+perl setup by genehack (https://github.com/genehack/emacs) that I'm more or less
+copying. Trouble is its got so much stuff in it and does so much that I have no
+idea where what comes from, so I'm stealing it part by part and rebuilding it
+from the ground up. Accompanying doco for each part is going into my private
+wiki for the moment. Maybe I'll move it later if I find somewhere else that
+might be useful.
+
+Installing
+
+Just check it out as .emacs.d in ~, can set it up as a link thing if we really
+want, but don't really care enough. This works fine so far
