@@ -4,6 +4,7 @@
 (add-emacs-lib-subdir-to-load-path "cperl-mode")
 (require 'cperl-mode)
 (require 'perl-completion)
+(require 'perl-find-library)
 
 (defalias 'perl-mode 'cperl-mode)
 
