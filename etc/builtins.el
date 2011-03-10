@@ -47,3 +47,38 @@
 (setq jit-lock-stealth-time 5
       jit-lock-defer-contextually t
       jit-lock-stealth-nice 0.5)
+
+;;; GENERAL INDENTATION RELATED OPTIONS
+(setq-default indent-tabs-mode nil)
+
+(defvar modes-for-indentation-munging
+  '(c++-mode
+    c-mode
+    cperl-mode
+    emacs-lisp-mode
+    objc-mode
+    python-mode
+    rspec-mode
+    ruby-mode)
+  "List of modes to set up to do indent-on-paste and
+remove-leading-whitespace-on-kil-line tricks")
+
+;; re-indent when pasting back into programming-related major modes
+;; from <http://www.emacswiki.org/emacs-en/AutoIndentation>
+(dolist (command '(yank yank-pop))
+  (eval `(defadvice ,command
+           (after indent-region activate)
+           (and (not current-prefix-arg)
+                (member major-mode modes-for-indentation-munging)
+                (let ((mark-even-if-inactive transient-mark-mode))
+                  (indent-region (region-beginning) (region-end) nil))))))
+
+;; remove excess white space when killing newlines in
+;; programming-related major modes
+;; from <http://www.emacswiki.org/emacs-en/AutoIndentation>
+(defadvice kill-line (before check-position activate)
+  (if (member major-mode modes-for-indentation-munging)
+      (if (and (eolp) (not (bolp)))
+          (progn (forward-char 1)
+                 (just-one-space 0)
+                 (backward-char 1)))))
