@@ -15,3 +15,9 @@
 ;(require 'css-mode-autoloads)
 ; I think this autoload was the intended
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
+
+;;; DEBUGGING
+(setq debug-on-error t)
+
+;;; DESKTOP
+(desktop-save-mode 1)
