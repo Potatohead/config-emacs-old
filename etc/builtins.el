@@ -30,3 +30,7 @@
 
 ;;; DISABLE
 (put 'overwrite-mode 'disabled t)
+
+;;; EXECUTABLE-UPON-SAVE MAGIC
+;;  from <http://www.emacswiki.org/cgi-bin/wiki/MakingScriptsExecutableOnSave>
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
