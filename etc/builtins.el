@@ -27,3 +27,6 @@
   "Run dired on current active directory."
   (interactive)
   (dired default-directory))
+
+;;; DISABLE
+(put 'overwrite-mode 'disabled t)
