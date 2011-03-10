@@ -21,3 +21,9 @@
 
 ;;; DESKTOP
 (desktop-save-mode 1)
+
+;;; DIRED
+(defun jsja-dired-right-here ()
+  "Run dired on current active directory."
+  (interactive)
+  (dired default-directory))
