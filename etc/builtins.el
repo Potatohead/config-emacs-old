@@ -82,3 +82,7 @@ remove-leading-whitespace-on-kil-line tricks")
           (progn (forward-char 1)
                  (just-one-space 0)
                  (backward-char 1)))))
+
+;;; HIGHLIGHTING
+(set-face-foreground 'highlight "gray10")
+(set-face-background 'highlight "yellow")
