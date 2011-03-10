@@ -86,3 +86,6 @@ remove-leading-whitespace-on-kil-line tricks")
 ;;; HIGHLIGHTING
 (set-face-foreground 'highlight "gray10")
 (set-face-background 'highlight "yellow")
+
+;;; HTML
+(add-to-list 'auto-mode-alist '("\\.tt2?$" . html-mode))
