@@ -49,7 +49,7 @@
 ;;; ease of use.
 (defvar module-list
   '(
-;    "builtins"
+    "builtins"
 ;    "keys"
 ;    "erc-conf"
 ;    "gnus-conf"
