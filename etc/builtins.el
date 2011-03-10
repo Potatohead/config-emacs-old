@@ -7,3 +7,11 @@
 (setq auto-save-list-file-prefix (concat emacs-dir
                                          "tmp/auto-save-list/.saves-")
       make-backup-files nil)
+
+;;; CALENDAR
+(setq mark-holidays-in-calendar t)
+
+;;; CSS-MODE
+;(require 'css-mode-autoloads)
+; I think this autoload was the intended
+(autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
