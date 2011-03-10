@@ -38,3 +38,12 @@
 ;;; FFAP
 (require 'ffap)
 (ffap-bindings)
+
+;;; FONT-LOCK
+(require 'font-lock)
+(global-font-lock-mode 1)
+(setq-default font-lock-maximum-decoration t
+	      font-lock-maximum-size nil)
+(setq jit-lock-stealth-time 5
+      jit-lock-defer-contextually t
+      jit-lock-stealth-nice 0.5)
