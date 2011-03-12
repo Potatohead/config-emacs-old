@@ -152,20 +152,80 @@ remove-leading-whitespace-on-kil-line tricks")
 ;;; KEYSTROKE ECHO
 (setq echo-keystrokes 0.1)
 
-;;; LINE NUMBERS
-;--------------------------------------------------
-; (column-number-mode 1)
-; (defvar linum-max-line-width "0"
-;   "number of digits in last line in current buffer.
-; This is a buffer-local variable.")
-; (defun linum-before-numbering ()
-;   "Small kludge to figure out the appropriate width for linum to use."
-;   (make-local-variable 'linum-max-line-width)
-;   (save-excursion
-;     (goto-char (point-max))
-;     (setq linum-max-line-width (length (format "%s" (line-number-at-pos))))))
-; (add-hook 'linum-before-numbering-hook 'linum-before-numbering)
-; (setq linum-format
-;       '(lambda (number)
-;          (format (concat " %" (number-to-string linum-max-line-width) "d ") number)))
-;-------------------------------------------------- 
+;;; MESSAGE LOG
+(setq message-log-max 5000)
+
+;;; (MENU/SCROLLBAR/TOOLBAR)-MODE
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+;;; MODE LINE FACES
+(set-face-background 'mode-line "black")
+(set-face-foreground 'mode-line "yellow2")
+
+;;; NXML-MODE
+(fset 'xml-mode 'nxml-mode)
+
+(add-to-list 'auto-mode-alist '("\\.rng'"  . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.rss'"  . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.xml'"  . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.xsd'"  . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.xslt'" . nxml-mode))
+
+(if (boundp 'magic-mode-alist)
+    (setq magic-mode-alist (cons '("<\\?xml " . nxml-mode) magic-mode-alist))
+  (defvar magic-mode-alist)
+  (setq magic-mode-alist '("<\\?xml " . nxml-mode)))
+
+(setq nxml-bind-meta-tab-to-complete-flag nil
+      nxml-syntax-highlight-flag t)
+
+;;; PAREN MATCH
+(require 'paren)
+(show-paren-mode t)
+(setq show-paren-style 'expression)
+
+;;; SAVE-HIST
+(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring)
+      savehist-file (concat emacs-dir "tmp/savehist"))
+(savehist-mode t)
+
+;;; SIZE INDICATION MODE
+(size-indication-mode t)
+
+;;; TIME DISPLAY
+(setq display-time-day-and-date t)
+(display-time)
+
+;;; TITLE BARS
+(setq frame-title-format "<%b> == (%f) [mode: %m]")
+
+;;; TRASH
+(setq delete-by-moving-to-trash t)
+
+;;; UNIQUIFY
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse
+      uniquify-separator "/"
+      uniquify-after-kill-buffer-p t
+      uniquify-ignore-buffers-re "^\\*")
+
+;;; UTF8
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;;; VC
+(setq vc-follow-symlinks t)
+
+;;; WGET
+(setq wget-download-directory "~/tmp")
+
+;;; YANK
+(setq-default mouse-yank-at-point t)
+
+;;; YES-OR-NO
+(defalias 'yes-or-no-p 'y-or-n-p)
