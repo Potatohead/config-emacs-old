@@ -4,3 +4,24 @@
 [submodule "lib/auto-complete"]
 	path = lib/auto-complete
 	url = https://github.com/m2ym/auto-complete.git
+[submodule "lib/delim-kill"]
+	path = lib/delim-kill
+	url = http://github.com/thomas11/delim-kill.git
+[submodule "lib/magit"]
+	path = lib/magit
+	url = https://github.com/philjackson/magit.git
+[submodule "lib/markdown-mode"]
+	path = lib/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
+[submodule "lib/maxframe"]
+	path = lib/maxframe
+	url = https://github.com/rmm5t/maxframe.el.git
+[submodule "lib/smart-tab"]
+	path = lib/smart-tab
+	url = https://github.com/genehack/smart-tab.git
+[submodule "lib/textmate"]
+	path = lib/textmate
+	url = https://github.com/defunkt/textmate.el.git
+[submodule "lib/yaml-mode"]
+	path = lib/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
