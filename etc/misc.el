@@ -11,3 +11,6 @@
                            ac-source-abbrev
                            ac-source-dictionary
                            ac-source-words-in-same-mode-buffers))
+
+;;; LINUM PLUS
+(require 'linum+)
