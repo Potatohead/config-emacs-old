@@ -50,7 +50,7 @@
 (defvar module-list
   '(
     "builtins"
-;    "keys"
+    "bindings"
 ;    "erc-conf"
 ;    "gnus-conf"
     "misc"
