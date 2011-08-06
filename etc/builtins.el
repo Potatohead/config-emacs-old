@@ -4,9 +4,12 @@
 ;;; the place.
 
 ;; AUTO-SAVE BACKUPS
-(setq auto-save-list-file-prefix (concat emacs-dir
-                                         "tmp/auto-save-list/.saves-")
-      make-backup-files nil)
+;(setq auto-save-list-file-prefix (concat emacs-dir
+;                                         "tmp/auto-save-list/.saves-")
+;      make-backup-files nil)
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/tmp/auto-save-list/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs.d/tmp/auto-backup-list/"))))
 
 ;;; CALENDAR
 (setq mark-holidays-in-calendar t)
