@@ -179,9 +179,14 @@
 (require 'textmate)
 (textmate-mode)
 
-;;; THEME
-(if (custom-theme-p 'naquadah)
-    (load-theme 'naquadah))
+;;; COLOR THEME
+(add-emacs-lib-subdir-to-load-path "color-theme")
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-clarity)))
+
 
 ;;; YAML-MODE
 (add-emacs-lib-subdir-to-load-path "yaml-mode")
