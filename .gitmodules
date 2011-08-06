@@ -25,3 +25,6 @@
 [submodule "lib/yaml-mode"]
 	path = lib/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "lib/evil"]
+	path = lib/evil
+	url = git://gitorious.org/evil/evil.git

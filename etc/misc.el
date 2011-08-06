@@ -90,6 +90,11 @@
 ;;; DISK
 (autoload 'disk "disk" "Save, revert, or find file." t)
 
+;;; EVIL
+(add-emacs-lib-subdir-to-load-path "evil")
+(require 'evil)
+(evil-mode 1)
+
 ;;; FILLADAPT
 (require 'filladapt)
 
