@@ -20,7 +20,7 @@
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 
 ;;; DEBUGGING
-(setq debug-on-error t)
+;;;(setq debug-on-error t)
 
 ;;; DESKTOP
 (desktop-save-mode 1)
