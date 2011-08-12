@@ -11,6 +11,13 @@
 (add-to-list 'auto-mode-alist '("\\.cgi$" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.pod$" . pod-mode))
 
+;;; CPERL MODE SETTINGS
+(setq cperl-indent-level 2
+      cperl-close-parens-offset -2
+      cperl-continued-statement-offset 2
+      cperl-indent-parens-as-block t
+      cperl-tab-always-indent t)
+
 ;;; HOOK MODS
 (add-hook 'cperl-mode-hook
   '(lambda ()
