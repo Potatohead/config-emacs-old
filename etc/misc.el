@@ -187,10 +187,15 @@
 ;;; COLOR THEME
 (add-emacs-lib-subdir-to-load-path "color-theme")
 (require 'color-theme)
+;(add-emacs-lib-subdir-to-load-path "color-theme-desert")
+;(require 'color-theme-desert)
+(require 'color-theme-wombat)
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)
-     (color-theme-clarity)))
+;     (color-theme-clarity)))
+;     (color-theme-desert)))
+     (color-theme-wombat)))
 
 
 ;;; YAML-MODE
